@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Password Vault
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+      <ion-row justify-content-center *ngFor="let page of pages" >
+        <ion-col>
+          <ion-button expand="block" size="large" (click)="pageClicked(page.pageName)">
+            {{page.descriptor}}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

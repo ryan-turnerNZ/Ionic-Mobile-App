@@ -1,0 +1,56 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="login"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-items-center size="2" sizeXs="12">
+        <div text-center>
+          <h1>Register Page</h1>
+        </div>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.username">
+
+            <div class="error-message" *ngIf="registerForm.get('username').hasError(validation.type)
+            && (registerForm.get('username').dirty || registerForm.get('username').touched)">
+
+              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+
+            </div>
+          </ng-container>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validationMessages.password">
+
+              <div class="error-message" *ngIf="registerForm.get('password').hasError(validation.type) &&
+              (registerForm.get('password').dirty || registerForm.get('password').touched)">
+
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+
+              </div>
+            </ng-container>
+
+          </div>
+        </div>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+          <div padding>
+            <ion-item>
+              <ion-input type="text" formControlName="username" placeholder="Username" required="true" clearInput="true" [(ngModel)]="user.username"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input [type]="passwordType"  formControlName="password" clearInput="true" clearOnEdit="false" placeholder="Password" required="true" [(ngModel)]="user.password"></ion-input>
+              <ion-icon [name]="passwordEyeIcon" class="passwordEyeIcon" (click)="hideShowPassword()"></ion-icon>
+            </ion-item>
+          </div>
+
+          <div padding>
+            <ion-button size="large" expand="block" type="register" [disabled]="!registerForm.valid">Register</ion-button>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

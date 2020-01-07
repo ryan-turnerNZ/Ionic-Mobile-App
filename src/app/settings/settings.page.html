@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div padding>
+        <ion-button size="large" expand="block" (click)="changeUserDetails()">Change Password</ion-button>
+        <ion-button (click)="logUserOut()" size="large" expand="block">Log Out</ion-button>
+    </div>
+    <ion-button class="bottom-button" (click)="queryDeleteUser()" size="large" expand="block" color="danger">Delete Account</ion-button>
+
+</ion-content>
