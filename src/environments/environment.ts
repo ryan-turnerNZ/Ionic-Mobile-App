@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyC258e8nw0m-wBqagTABOGuxho8uh1CZ6I',
+    apiKey: 'Add Key Here',
     authDomain: 'swen325-7d566.firebaseapp.com',
     databaseURL: 'https://swen325-7d566.firebaseio.com',
     projectId: 'swen325-7d566',
     storageBucket: '',
     messagingSenderId: '285067467028',
-    appId: '1:285067467028:web:60eceffecccd585f'
+    appId: 'Add App ID'
   }
 };
 
